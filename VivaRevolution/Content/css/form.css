@@ -179,13 +179,13 @@ form:after {
 #username { background-position: 10px 10px !important }
 #password { background-position: 10px -53px !important }
 #content form input[type="submit"] {
-	background: rgb(254,231,154);
-	background: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);
-	background: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);
-	background: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);
-	background: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );
+    background: rgb(255,230,85);
+	background: -moz-linear-gradient(top,  rgba(255,230,85,1) 0%,rgba(255,217,0,1) 100%);
+	background: -webkit-linear-gradient(top,  rgba(255,230,85,1) 0%,rgba(255,217,0,1) 100%);
+	background: -o-linear-gradient(top,  rgba(255,230,85,1) 0%,rgba(255,217,0,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(255,230,85,1) 0%,rgba(255,217,0,1) 100%);
+	background: linear-gradient(top,  rgba(255,230,85,1) 0%,rgba(255,217,0,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFEB75', endColorstr='#ffd900',GradientType=0 );
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-ms-border-radius: 5px;
@@ -196,8 +196,8 @@ form:after {
 	-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
 	-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
 	box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
-	border: 1px solid #D69E31;
-	color: #85592e;
+	border: 1px solid #aaa;
+	color: #555;
 	cursor: pointer;
 	float: right;
 	font: bold 15px Helvetica, Arial, sans-serif;
@@ -208,13 +208,13 @@ form:after {
 	width: 120px;
 }
 #content form input[type="submit"]:hover {
-	background: rgb(254,193,81);
-	background: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%);
-	background: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);
-	background: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);
-	background: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );
+	background: rgb(255,217,0);
+	background: -moz-linear-gradient(top,  rgba(255,217,0,1) 0%,rgba(255,230,85,1) 100%);
+	background: -webkit-linear-gradient(top,  rgba(255,217,0,1) 0%,rgba(255,230,85,1) 100%);
+	background: -o-linear-gradient(top,  rgba(255,217,0,1) 0%,rgba(255,230,85,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(255,217,0,1) 0%,rgba(255,230,85,1) 100%);
+	background: linear-gradient(top,  rgba(255,217,0,1) 0%,rgba(255,230,85,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd900', endColorstr='#FFEB75',GradientType=0 );
 }
 #content form div a {
 	color: #004a80;
@@ -224,12 +224,12 @@ form:after {
     text-decoration: underline;
 }
 .button {
-	background: rgb(247,249,250);
-	background: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);
-	background: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);
-	background: -o-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);
-	background: linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);
+	background: rgb(255,217,0);
+	background: -moz-linear-gradient(top,  rgba(255,217,0,1) 0%,rgba(255,230,85,1) 100%);
+	background: -webkit-linear-gradient(top,  rgba(255,217,0,1) 0%,rgba(255,230,85,1) 100%);
+	background: -o-linear-gradient(top,  rgba(255,217,0,1) 0%,rgba(255,230,85,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(255,217,0,1) 0%,rgba(255,230,85,1) 100%);
+	background: linear-gradient(top,  rgba(255,217,0,1) 0%,rgba(255,230,85,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f9fa', endColorstr='#f0f0f0',GradientType=0 );
 	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;
 	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;

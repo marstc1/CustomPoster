@@ -74,19 +74,21 @@ a:hover {
 ---------------------------------------------------- */
 
 #header {
-	background-color: #333;
+	background-color: #555;
+    border-bottom: 1px #222 solid;
 }
 #header-inner {
 	margin: 0 auto;
 	width: 940px;
 	height: 65px;
 	padding: 0 20px;
+    background: url(../images/shared/bg_header-inner.jpg) no-repeat;
 }
 #header h1 {
 	text-indent: -9999px;
 }
 #header h1 a {
-	width: 100px;
+	width: 190px;
 	height: 65px;
 	float: left;
 }
@@ -106,14 +108,14 @@ ul#nav li {
 	list-style: none;
 }
 ul#nav li a {
-	color: #ccc;
+	color: #ddd;
 	text-decoration: none;
 }
 ul#nav li a:hover, ul#nav li.signup a:hover {
-	color: #009933;
+	color: #ffd700;
 }
 ul#nav li a.active {
-	color: #fff;
+	color: #ffd700;
 }
 
 /* POSTER
