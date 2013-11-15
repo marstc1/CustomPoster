@@ -112,7 +112,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\PosterViewModel.cs" />
+    <Compile Include="Models\Mappers\PosterViewModelMapper.cs" />
+    <Compile Include="Models\PosterImage.cs" />
+    <Compile Include="Models\ViewModels\PosterViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +122,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\css\960_24_col.css" />
+    <Content Include="Content\css\form.css" />
     <Content Include="Content\css\vivaRevolution.css" />
     <Content Include="Content\css\enhanced.css" />
     <Content Include="Content\css\site.css" />
@@ -128,6 +131,8 @@
     <Content Include="Content\fonts\capture_it-webfont.svg" />
     <Content Include="Content\images\posterId\dv.gif" />
     <Content Include="Content\images\posterId\hs.gif" />
+    <Content Include="Content\images\posterId\music\bd.gif" />
+    <Content Include="Content\images\posterId\music\el.gif" />
     <Content Include="Content\images\posterId\r2.gif" />
     <Content Include="Content\images\posterId\sj.gif" />
     <Content Include="Content\images\posterId\st.gif" />
@@ -136,6 +141,19 @@
     <Content Include="Content\images\poster\bg_tagline.gif" />
     <Content Include="Content\images\poster\bg_top.gif" />
     <Content Include="Content\images\shared\bg_poster-inner.jpg" />
+    <None Include="Content\scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Content\scripts\jquery-1.7.1.js" />
+    <Content Include="Content\scripts\jquery-1.7.1.min.js" />
+    <Content Include="Content\scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Content\scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Content\scripts\jquery.form-validation.js" />
+    <Content Include="Content\scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Content\scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Content\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Content\scripts\jquery.validate.js" />
+    <Content Include="Content\scripts\jquery.validate.min.js" />
+    <Content Include="Content\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

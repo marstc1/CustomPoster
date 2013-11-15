@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using VivaRevolution.Models;
+using VivaRevolution.Models.ViewModels;
 
 namespace VivaRevolution.Controllers
 {
@@ -29,14 +26,15 @@ namespace VivaRevolution.Controllers
             return RedirectToAction("View", new { @ImgId = imgId, @Quote = quote, @Name = name, @Title = title, @TagLine = tagline });
         }
 
-        public ActionResult View(string imgId, string quote, string name, string title, string tagline)
+        public ActionResult View(string quote, string name, string title, string imgCat, string imgId, string tagline)
         {
             PosterViewModel vm = new PosterViewModel
             {
-                ImgId = (!String.IsNullOrEmpty(imgId)) ? imgId : "tb",
                 Quote = (!String.IsNullOrEmpty(quote)) ? quote.ToUpper() : string.Empty,
                 Name = (!String.IsNullOrEmpty(name)) ? name.ToUpper(): string.Empty,
                 Title = (!String.IsNullOrEmpty(title)) ? string.Format(" - {0}", title) : string.Empty,
+                ImgCat = (!String.IsNullOrEmpty(imgCat)) ? imgCat : string.Empty,
+                ImgId = (!String.IsNullOrEmpty(imgId)) ? imgId : "tb",
                 TagLine = (!String.IsNullOrEmpty(tagline)) ? tagline : "Join the digital revolution",
             };
             

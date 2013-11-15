@@ -1,4 +1,4 @@
-﻿@model VivaRevolution.Models.PosterViewModel
+﻿@model VivaRevolution.Models.ViewModels.PosterViewModel
 
 @{
     ViewBag.Title = "Join the digital revolution";
@@ -8,25 +8,58 @@
 
     <div class="grid_20">
 
-        @using (Html.BeginForm("", "poster", FormMethod.Post, new { encType = "multipart/form-data" }))
-        {
-            @Html.LabelFor(x => x.ImgId);
-            @Html.TextBoxFor(x => x.ImgId, new { @class = "wide" });
-            
-            @Html.LabelFor(x => x.Quote);
-            @Html.TextAreaFor(x => x.Quote, new { @class="wide" });
+        <div class="container">
+            <section id="content">
+                @using (Html.BeginForm("", "poster", FormMethod.Post, new { encType = "multipart/form-data" }))
+                {           
+                    <h1>Create Your Poster</h1>
+                    
+                    <div>
+                        @Html.LabelFor(x => x.Quote)
+                        @Html.TextAreaFor(x => x.Quote, new { @class="wide", @maxlength="150" })
+                    </div>
 
-            @Html.LabelFor(x => x.Name);
-            @Html.TextBoxFor(x => x.Name, new { @class="wide" });
+                    <div>
+                        @Html.LabelFor(x => x.Name)
+                        @Html.TextBoxFor(x => x.Name, new { @class="wide" })
+                    </div>
 
-            @Html.LabelFor(x => x.Title);
-            @Html.TextBoxFor(x => x.Title, new { @class="wide" });
+                    <div>
+                        @Html.LabelFor(x => x.Title)
+                        @Html.TextBoxFor(x => x.Title, new { @class="wide" })
+                    </div>
+     
+                    <div>            
+                        @Html.LabelFor(x => x.Images)
+                    </div>
 
-            @Html.LabelFor(x => x.TagLine);
-            @Html.TextBoxFor(x => x.TagLine, new { @class="wide" });
-    
-            <input type="submit" name="Submit" id="Submit" value="Go!" />
-        }
+                    <div>
+                        <select id="ImgId" class="wide" name="ImgId">
+                            @foreach (var image in Model.Images)
+                            {
+                                if (image.ImageValue == "tb")
+                                {
+                                    <option selected="selected" value="@image.ImageValue">@image.ImageName</option>
+                                }
+                                else
+                                {
+                                    <option value="@image.ImageValue">@image.ImageName</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    
+                    <div>
+                        @Html.LabelFor(x => x.TagLine)
+                        @Html.TextBoxFor(x => x.TagLine, new { @class="wide" })
+                    </div>
+                    
+                    <div>
+                        <input type="submit" name="Submit" id="Submit" value="Go!" />
+                    </div>
+                }
+            </section>
+        </div>
 
     </div>
 
@@ -35,3 +68,5 @@
     </div>
 
 </div>
+
+<script src="~/Content/scripts/jquery.form-validation.js"></script>

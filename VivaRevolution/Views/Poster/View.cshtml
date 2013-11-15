@@ -1,4 +1,4 @@
-﻿@model VivaRevolution.Models.PosterViewModel
+﻿@model VivaRevolution.Models.ViewModels.PosterViewModel
 
 @{
     ViewBag.Title = "View";
@@ -12,7 +12,7 @@
                 <div id="poster-top">
                     <div class="quote large">@Model.Quote</div>
                     <div class="name small">@Model.Name@Model.Title</div>
-                    <div class="posterImg"><img src="~/Content/images/posterId/@String.Format("{0}.gif", @Model.ImgId)" /></div>
+                    <div class="posterImg"><img src="~/Content/images/posterId/@Model.ImagePath" /></div>
                 </div>
                 <div class="poster-tagline">@Model.TagLine</div>
             </div>
