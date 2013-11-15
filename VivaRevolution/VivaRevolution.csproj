@@ -129,8 +129,11 @@
     <Content Include="Content\css\reset.css" />
     <Content Include="Content\css\tables.css" />
     <Content Include="Content\fonts\capture_it-webfont.svg" />
+    <Content Include="Content\images\posterId\ba.gif" />
+    <Content Include="Content\images\posterId\bd.gif" />
     <Content Include="Content\images\posterId\dv.gif" />
     <Content Include="Content\images\posterId\hs.gif" />
+    <Content Include="Content\images\posterId\hsm.gif" />
     <Content Include="Content\images\posterId\music\bd.gif" />
     <Content Include="Content\images\posterId\music\el.gif" />
     <Content Include="Content\images\posterId\r2.gif" />

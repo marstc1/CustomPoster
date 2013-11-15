@@ -47,7 +47,7 @@ form:after {
 	clear: both;
 	visibility: hidden;
 }
-.container { margin: 25px auto; position: relative; width: 900px; }
+.container { margin: 25px auto; position: relative; }
 #content {
 	background: #f9f9f9;
 	background: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);
@@ -74,7 +74,7 @@ form:after {
 	font: bold 25px Helvetica, Arial, sans-serif;
 	letter-spacing: -0.05em;
 	line-height: 20px;
-	margin: 10px 0 30px;
+	margin: 0px 0 20px;
 }
 #content h1:before,
 #content h1:after {
@@ -160,9 +160,9 @@ form:after {
 	background: #eae7e7;
 	border: 1px solid #c8c8c8;
 	color: #777;
-	font: 13px Helvetica, Arial, sans-serif;
+	font: 10px Helvetica, Arial, sans-serif;
 	margin: 0 0 10px;
-	padding: 15px 10px 15px 10px;
+	padding: 10px;
 	width: 80%;
 }
 #content form input[type="text"]:focus,
@@ -202,7 +202,7 @@ form:after {
 	float: right;
 	font: bold 15px Helvetica, Arial, sans-serif;
 	height: 35px;
-	margin: 20px 0 35px 15px;
+	margin: 20px 0 30px 15px;
 	position: relative;
 	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 	width: 120px;
@@ -262,4 +262,7 @@ form:after {
 }
 #ImgId {
     width: 340px;
+}
+textarea {
+    height: 41px;
 }
