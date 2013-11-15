@@ -11,9 +11,9 @@ namespace VivaRevolution.Controllers
             PosterViewModel vm = new PosterViewModel
             {
                 ImgId = "tb",
-                Quote = "When I invented the web, I didnt have to ask anyones permission",
-                Name = "Sir Tim Berners-Lee",
-                Title = "Inventor of the world wide web",
+                Quote = "WHEN I INVENTED THE WEB, I DIDNT HAVE TO ASK ANYONES PERMISSION",
+                Name = "SIR TIM BERNERS-LEE",
+                Title = " - INVENTOR OF THE WORLD WIDE WEB",
                 TagLine = "Join the digital revolution"
             };
 
@@ -32,7 +32,7 @@ namespace VivaRevolution.Controllers
             {
                 Quote = (!String.IsNullOrEmpty(quote)) ? quote.ToUpper() : string.Empty,
                 Name = (!String.IsNullOrEmpty(name)) ? name.ToUpper(): string.Empty,
-                Title = (!String.IsNullOrEmpty(title)) ? string.Format(" - {0}", title) : string.Empty,
+                Title = (!String.IsNullOrEmpty(title)) ? string.Format(" - {0}", title.ToUpper()) : string.Empty,
                 ImgCat = (!String.IsNullOrEmpty(imgCat)) ? imgCat : string.Empty,
                 ImgId = (!String.IsNullOrEmpty(imgId)) ? imgId : "tb",
                 TagLine = (!String.IsNullOrEmpty(tagline)) ? tagline : "Join the digital revolution",
