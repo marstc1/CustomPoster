@@ -1,0 +1,22 @@
+﻿@model VivaRevolution.Models.ViewModels.PosterListViewModel
+
+@{
+    ViewBag.Title = "List";
+}
+       
+        <div id="posterList">
+            @foreach (var poster in Model.Posters)
+            {
+                <div id="poster-inner">
+                    <div id="poster-top">
+                        <div class="quote large">@poster.Quote</div>
+                        <div class="name small">@poster.Name@poster.Title</div>
+                        <div class="posterImg"><img src="~/Content/images/posterId/@String.Format("{0}.gif", @poster.ImgId)" /></div>
+                    </div>
+                    <div class="poster-tagline">@poster.TagLine</div>
+                    <div>
+                        Comment - Star - Share
+                    </div>
+                </div>
+            }
+        </div>

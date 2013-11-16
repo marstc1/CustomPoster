@@ -121,11 +121,11 @@ ul#nav li a.active {
 /* POSTER
 ---------------------------------------------------- */
 
-#poster {
+#poster #poster-inner {
+    margin: 0 auto;
 }
 
 #poster-inner {
-	margin: 0 auto;
     min-height: 528px;
     max-height: 528px;
     min-width: 438px;
@@ -165,6 +165,10 @@ ul#nav li a.active {
     opacity: 0.75;
 }
 
+#posterList #poster-inner {
+    float: left;
+    min-width: 378px;
+}
 
 
 
