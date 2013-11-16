@@ -154,6 +154,14 @@ ul#nav li a.active {
     background: url(../images/poster/bg_tagline.gif) 0 0 no-repeat;
 }
 
+.poster-footer {
+    position: absolute;
+    margin: 500px 0px 0px 70px;
+    min-width: 304px;
+    max-width: 304px;
+    text-align: center;
+}
+
 .quote {
     padding: 25px 11px 8px 11px;
 }
