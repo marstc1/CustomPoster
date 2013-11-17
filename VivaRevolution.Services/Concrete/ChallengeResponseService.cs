@@ -11,7 +11,17 @@ namespace VivaRevolution.Services.EmailService
     {
         public string Invoke()
         {
-            return System.Web.HttpContext.Current.User.Identity.Name.Split('\\')[1];
+            if (!String.IsNullOrEmpty(System.Web.HttpContext.Current.User.Identity.Name))
+            {
+                string login = System.Web.HttpContext.Current.User.Identity.Name;
+                string racfid = login.Split('\\')[1].ToUpper();
+
+                return racfid;
+            }
+            else
+            {
+                return "Unknown";
+            }
         }
     }
 }

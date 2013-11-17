@@ -50,7 +50,7 @@ namespace VivaRevolution.Controllers
                 TagLine = (!String.IsNullOrEmpty(tagline)) ? tagline : "Join the digital revolution",
                 Private = false,
                 PrivateKey = String.Empty,
-                CreatedBy = (!String.IsNullOrEmpty(GetLoginName())) ? GetLoginName().ToUpper() : "Unknown",
+                CreatedBy = GetLoginName(),
                 DateCreated = DateTime.Now
             };
             
