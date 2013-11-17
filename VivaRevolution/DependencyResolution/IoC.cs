@@ -19,6 +19,8 @@
 using StructureMap;
 using VivaRevolution.Domain.Abstract;
 using VivaRevolution.Domain.Concrete;
+using VivaRevolution.Services.Abstract;
+using VivaRevolution.Services.EmailService;
 namespace VivaRevolution.DependencyResolution {
     public static class IoC {
         public static IContainer Initialize() {
@@ -30,6 +32,7 @@ namespace VivaRevolution.DependencyResolution {
                                         scan.WithDefaultConventions();
                                     });
                             x.For<IPosterRepository>().Use<EFPosterRepository>();
+                            x.For<IChallengeResponseService>().Use<ChallengeResponseService>();
                         });
             return ObjectFactory.Container;
         }

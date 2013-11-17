@@ -17,8 +17,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -216,6 +216,10 @@
     <ProjectReference Include="..\VivaRevolution.Domain\VivaRevolution.Domain.csproj">
       <Project>{27ccfbb0-31ef-4ea8-ada5-5511b1de3ca5}</Project>
       <Name>VivaRevolution.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VivaRevolution.Services\VivaRevolution.Services.csproj">
+      <Project>{115ba195-4d09-43ef-bff6-d7e8de95a1f9}</Project>
+      <Name>VivaRevolution.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

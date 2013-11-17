@@ -1,9 +1,11 @@
-﻿using System;
+﻿using StructureMap;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 using VivaRevolution.Domain.Abstract;
 using VivaRevolution.Domain.Entities;
 using VivaRevolution.Models.ViewModels;
+using VivaRevolution.Services.Abstract;
 
 namespace VivaRevolution.Controllers
 {
@@ -17,7 +19,7 @@ namespace VivaRevolution.Controllers
         }
         
         public ActionResult Index()
-        {
+        {            
             PosterViewModel vm = new PosterViewModel
             {
                 ImgId = "dv",
@@ -31,7 +33,12 @@ namespace VivaRevolution.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string quote, string name, string title, string imgCat, string imgId, string tagline)
+        public ActionResult Index(string quote, 
+                                  string name, 
+                                  string title, 
+                                  string imgCat, 
+                                  string imgId, 
+                                  string tagline)
         {
             Poster poster = new Poster
             {
@@ -43,16 +50,16 @@ namespace VivaRevolution.Controllers
                 TagLine = (!String.IsNullOrEmpty(tagline)) ? tagline : "Join the digital revolution",
                 Private = false,
                 PrivateKey = String.Empty,
-                CreatedBy = "MARSTC1",
+                CreatedBy = (!String.IsNullOrEmpty(GetLoginName())) ? GetLoginName().ToUpper() : "Unknown",
                 DateCreated = DateTime.Now
             };
             
             repository.SavePoster(poster);
             
-            return RedirectToAction("View", new { @ImgId = imgId, @Quote = quote, @Name = name, @Title = title, @TagLine = tagline });
+            return RedirectToAction("Latest");
         }
 
-        public ActionResult View(string quote, string name, string title, string imgCat, string imgId, string tagline)
+        public ActionResult Preview(string quote, string name, string title, string imgCat, string imgId, string tagline)
         {
             PosterViewModel vm = new PosterViewModel
             {
@@ -83,15 +90,11 @@ namespace VivaRevolution.Controllers
             return View("List", vm);
         }
 
-        public ActionResult Vader()
-        {            
-            string imgId = "dv";
-            string quote = "when I invented the death star, I didnt have to ask anyones permission";
-            string name = "darth vader";
-            string title = "sith lord, supreme commander";
-            string tagline = "Join the dark side";
-
-            return RedirectToAction("View", new { @ImgId = imgId, @Quote = quote, @Name = name, @Title = title, @TagLine = tagline });
+        private static string GetLoginName()
+        {
+            IChallengeResponseService userservice = ObjectFactory.GetInstance<IChallengeResponseService>();
+            string userid = userservice.Invoke();
+            return userid;
         }
     }
 }
