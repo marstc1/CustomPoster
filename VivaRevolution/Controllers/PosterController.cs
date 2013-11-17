@@ -74,6 +74,15 @@ namespace VivaRevolution.Controllers
             return View("View", vm);
         }
 
+        public ActionResult View(int id)
+        {
+            PosterListViewModel vm = new PosterListViewModel(repository.Posters);
+
+            vm.Posters = vm.Posters.Where(x => x.PosterId == id);
+
+            return View("List", vm);
+        }
+
         public ActionResult Latest()
         {
             PosterListViewModel vm = new PosterListViewModel(repository.Posters);
