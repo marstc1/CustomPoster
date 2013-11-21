@@ -76,6 +76,15 @@ a:hover {
 #header {
 	background-color: #555;
     border-bottom: 1px #222 solid;
+    -webkit-box-shadow: 0 12px 22px -5px #aaa;
+    -moz-box-shadow: 0 12px 22px -5px #aaa;
+	box-shadow: 0 12px 22px -5px #aaa;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+.padForHeader {
+    padding-top: 65px;
 }
 #header-inner {
 	margin: 0 auto;

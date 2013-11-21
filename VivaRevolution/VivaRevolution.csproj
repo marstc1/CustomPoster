@@ -17,7 +17,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
@@ -151,12 +151,22 @@
     <Content Include="Content\fonts\capture_it-webfont.svg" />
     <Content Include="Content\images\posterId\ba.gif" />
     <Content Include="Content\images\posterId\bd.gif" />
+    <Content Include="Content\images\posterId\ce.gif" />
+    <Content Include="Content\images\posterId\cn.gif" />
+    <Content Include="Content\images\posterId\doc.gif" />
     <Content Include="Content\images\posterId\dv.gif" />
+    <Content Include="Content\images\posterId\fotcBm.gif" />
+    <Content Include="Content\images\posterId\fotcJc.gif" />
     <Content Include="Content\images\posterId\hs.gif" />
     <Content Include="Content\images\posterId\hsm.gif" />
+    <Content Include="Content\images\posterId\jb.gif" />
+    <Content Include="Content\images\posterId\ji.gif" />
+    <Content Include="Content\images\posterId\lt.gif" />
+    <Content Include="Content\images\posterId\mcFly.gif" />
     <Content Include="Content\images\posterId\music\bd.gif" />
     <Content Include="Content\images\posterId\music\el.gif" />
     <Content Include="Content\images\posterId\pn.gif" />
+    <Content Include="Content\images\posterId\mz.gif" />
     <Content Include="Content\images\posterId\r2.gif" />
     <Content Include="Content\images\posterId\sj.gif" />
     <Content Include="Content\images\posterId\st.gif" />
@@ -165,6 +175,7 @@
     <Content Include="Content\images\poster\bg_tagline.gif" />
     <Content Include="Content\images\poster\bg_top.gif" />
     <Content Include="Content\images\shared\bg_header-inner.jpg" />
+    <Content Include="Content\images\shared\bg_main.png" />
     <Content Include="Content\images\shared\bg_poster-inner.jpg" />
     <None Include="Content\scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Content\scripts\jquery-1.7.1.js" />
