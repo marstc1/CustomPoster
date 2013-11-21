@@ -156,6 +156,7 @@
     <Content Include="Content\images\posterId\hsm.gif" />
     <Content Include="Content\images\posterId\music\bd.gif" />
     <Content Include="Content\images\posterId\music\el.gif" />
+    <Content Include="Content\images\posterId\pn.gif" />
     <Content Include="Content\images\posterId\r2.gif" />
     <Content Include="Content\images\posterId\sj.gif" />
     <Content Include="Content\images\posterId\st.gif" />
@@ -179,7 +180,9 @@
     <Content Include="Content\scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Content\scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

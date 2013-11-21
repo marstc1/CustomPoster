@@ -20,6 +20,7 @@ namespace VivaRevolution.Models.Mappers
             list.Add(new PosterImage { ImageValue = "ba", ImageName = "Mr T" });
             list.Add(new PosterImage { ImageValue = "hsm", ImageName = "George Peppard" });
             list.Add(new PosterImage { ImageValue = "bd", ImageName = "Bob Dylan" });
+            list.Add(new PosterImage { ImageValue = "pn", ImageName = "Pony" });
 
             return list;
         }
