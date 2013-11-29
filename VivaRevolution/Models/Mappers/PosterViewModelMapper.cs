@@ -28,6 +28,7 @@ namespace VivaRevolution.Models.Mappers
             list.Add(new PosterImage { ImageValue = "hsm", ImageName = "George Peppard" });
             list.Add(new PosterImage { ImageValue = "-", ImageName = "--- Music ---" });
             list.Add(new PosterImage { ImageValue = "bd", ImageName = "Bob Dylan" });
+            list.Add(new PosterImage { ImageValue = "bd", ImageName = "Dave Grohl" });
             list.Add(new PosterImage { ImageValue = "-", ImageName = "--- Movies ---" });
             list.Add(new PosterImage { ImageValue = "ce", ImageName = "Clint Eastwood" });
             list.Add(new PosterImage { ImageValue = "cn", ImageName = "Chuck Norris" });
@@ -37,7 +38,11 @@ namespace VivaRevolution.Models.Mappers
             list.Add(new PosterImage { ImageValue = "pn", ImageName = "Pony" });
             list.Add(new PosterImage { ImageValue = "fotcBm", ImageName = "Brett McKenzie" });
             list.Add(new PosterImage { ImageValue = "fotcJc", ImageName = "Jemaine Clement" });
-
+            list.Add(new PosterImage { ImageValue = "am", ImageName = "Alexander Meerkat" });
+            list.Add(new PosterImage { ImageValue = "db", ImageName = "David Brent" });
+            list.Add(new PosterImage { ImageValue = "eh", ImageName = "Earl Hickey" });
+            list.Add(new PosterImage { ImageValue = "hh", ImageName = "Hulk Hogan" });
+            list.Add(new PosterImage { ImageValue = "jlp", ImageName = "Capt Kirk" });
 
             return list;
         }

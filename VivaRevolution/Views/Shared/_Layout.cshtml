@@ -4,31 +4,66 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="~/Content/css/reset.css" rel="stylesheet" />
-    @*<link href="~/Content/css/site.css" rel="stylesheet" />*@
-    <link href="~/Content/css/form.css" rel="stylesheet" />
-    <link href="~/Content/css/vivaRevolution.css" rel="stylesheet" />
-    <link href="~/Content/css/960_24_col.css" rel="stylesheet" />
-    <link href="~/Content/css/enhanced.css" rel="stylesheet" />
-    <link href="~/Content/css/tables.css" rel="stylesheet" />
+    <link href="~/Content/css/posterWall.css" rel="stylesheet" />
     <script src="~/Content/scripts/jquery-1.7.1.min.js"></script>
 </head>
 
 <body>
-    <div id="header">
-        <div id="header-inner">
-            <ul id="nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/poster/latest">Latest</a></li>
-                <li>Top Rated</li>
-            </ul>
-            <h1>
-                <a href="/">Post a Poster</a>
-            </h1>
-        </div>
-    </div>
+    <div class="page-wrapperTop"></div>
+    <div class="page-wrapper">
+        <section class="intro" id="pw-intro">
+            <div class="nav" id="pw-nav">
+                <img class="logo" id="pw-logo" src="~/Content/images/logo.gif" />
+                <ul>
+                    <li>Create</li>
+                    <li>Latest</li>
+                    <li>Top Rated</li>
+                </ul>
+            </div>
 
-    @RenderBody()
-    
+            <div class="promo-poster" id="pw-promo-poster">
+                <img src="~/Content/images/promo-poster.jpg" />
+            </div>
+
+            <div class="featured-posters" id="pw-featured-posters">
+
+                <div class="poster" id="pw-poster1">
+                    <img src="~/Content/images/feature-poster.jpg" />
+                </div>
+
+            </div>
+        </section>
+
+        <section class="social-media mainBody" id="pw-social-media">
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+
+            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+            <hr />
+        </section>
+
+            @RenderBody()
+
+        <section class="latest mainBody" id="pw-latest">
+            <h2>Latest</h2>
+        </section>
+
+        <section class="top-rated mainBody" id="pw-top-rated">
+            <h2>Top Rated</h2>
+        </section>
+
+        <section class="footer mainBody" id="pw-footer">
+            <h2>Footer</h2>
+        </section>
+    </div>
 </body>
 </html>

@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'capture_itregular';
+    src: url('../fonts/capture_it-webfont.eot');
+    src: url('../fonts/capture_it-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/capture_it-webfont.woff') format('woff'),
+         url('../fonts/capture_it-webfont.ttf') format('truetype'),
+         url('../fonts/capture_it-webfont.svg#capture_itregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+margin : 0;
+padding : 0;
+}
+
+
+body {
+	font: 14px/24px helvetica, arial, sans-serif;
+    background: #ccc url(../images/body_bg.jpg) repeat-y top center;
+    color: #000;
+    text-align: center;
+}
+
+.page-wrapperTop {
+    position: relative;
+    min-height: 28px;
+    width: 1000px;
+    margin: 0 auto;
+    background: url(../images/wall_bg_top.jpg) no-repeat;
+}
+
+.page-wrapper {
+    width: 960px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.intro {
+    position: relative;
+    min-height: 664px;
+    color: #fff;
+    background: url(../images/wall_bg.jpg) no-repeat;
+}
+
+    .intro .promo-poster, .featured-posters {
+        position: absolute;
+        min-width: 480px;
+        top: 85px;
+        left: 100px;
+        text-align: left;
+    }
+
+    .intro .featured-posters {
+        left: 380px;
+        text-align: right;
+    }
+
+.nav {
+    position: absolute;
+    width: 850px;
+    height: 65px;
+    margin: 0 auto;
+    background: #000;
+    top: -8px;
+    left: 55px;
+    opacity: 0.8;
+}
+
+    .nav .logo {
+        float: left;
+        margin: 6px 0 0 50px;
+    }
+
+    .nav ul {
+        float: right;
+        margin: 20px 50px 0 0;
+    }
+
+    .nav li {
+        display: inline;
+        font-family: capture_itregular;
+        float: left;
+        margin: 0 0 0 40px;
+        list-style: none;
+    }
+
+.mainBody {
+    width: 850px;
+    margin: 5px auto;
+}
+
+    .mainBody hr {
+        border: 0;
+        height: 1px;
+        background-color: #ddd;
+    }
+
+    .mainBody h2 {
+        font-family: capture_itregular;
+        font-weight: normal;
+    }

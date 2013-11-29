@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    @*<link href="~/Content/css/site.css" rel="stylesheet" />*@
+    <link href="~/Content/css/form.css" rel="stylesheet" />
+    <link href="~/Content/css/vivaRevolution.css" rel="stylesheet" />
+    <link href="~/Content/css/960_24_col.css" rel="stylesheet" />
+    <link href="~/Content/css/enhanced.css" rel="stylesheet" />
+    <link href="~/Content/css/tables.css" rel="stylesheet" />
+    <script src="~/Content/scripts/jquery-1.7.1.min.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div id="header-inner">
+            <ul id="nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/poster/latest">Latest</a></li>
+                <li>Top Rated</li>
+            </ul>
+            <h1>
+                <a href="/">Post a Poster</a>
+            </h1>
+        </div>
+    </div>
+
+    @RenderBody()
+    
+</body>
+</html>

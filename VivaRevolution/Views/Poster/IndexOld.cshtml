@@ -1,0 +1,81 @@
+﻿@model VivaRevolution.Models.ViewModels.PosterViewModel
+
+@{
+    ViewBag.Title = "Join the digital revolution";
+}
+
+<div class="container_24 padForHeader">
+
+    <div class="grid_12">
+
+        <div id="poster">
+            <div id="poster-top">
+                <div class="quote large">@Model.Quote</div>
+                <div class="name small">@Model.Name@Model.Title</div>
+                <div class="posterImg"><img src="~/Content/images/posterId/@Model.ImagePath" /></div>
+            </div>
+            <div class="poster-tagline">@Model.TagLine</div>
+        </div>
+
+    </div>
+
+    <div class="grid_12">
+
+        <div class="container">
+            <section id="content">
+                @using (Html.BeginForm("", "poster", FormMethod.Post, new { encType = "multipart/form-data" }))
+                {           
+                    <h1>Create Your Poster</h1>
+                    
+                    <div>
+                        @Html.LabelFor(x => x.Quote)
+                        @Html.TextAreaFor(x => x.Quote, new { @class="wide", @maxlength="150" })
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(x => x.Name)
+                        @Html.TextBoxFor(x => x.Name, new { @class="wide" })
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(x => x.Title)
+                        @Html.TextBoxFor(x => x.Title, new { @class="wide" })
+                    </div>
+     
+                    <div>            
+                        @Html.LabelFor(x => x.Images)
+                    </div>
+
+                    <div>
+                        <select id="ImgId" class="wide" name="ImgId">
+                            @foreach (var image in Model.Images)
+                            {
+                                if (image.ImageValue == "dv")
+                                {
+                                    <option selected="selected" value="@image.ImageValue">@image.ImageName</option>
+                                }
+                                else
+                                {
+                                    <option value="@image.ImageValue">@image.ImageName</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    
+                    <div>
+                        @Html.LabelFor(x => x.TagLine)
+                        @Html.TextBoxFor(x => x.TagLine, new { @class="wide" })
+                    </div>
+                    
+                    <div>
+                        <input type="submit" name="Submit" id="Submit" value="Post It!" />
+                    </div>
+                }
+            </section>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="~/Content/scripts/jquery.form-validation.js"></script>
