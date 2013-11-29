@@ -188,6 +188,7 @@
     <Content Include="Content\images\shared\bg_poster-inner.jpg" />
     <None Include="Content\scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Content\images\wall_bg.jpg" />
+    <Content Include="Content\images\wall_bg_top.jpg" />
     <Content Include="Content\scripts\jquery-1.7.1.js" />
     <Content Include="Content\scripts\jquery-1.7.1.min.js" />
     <Content Include="Content\scripts\jquery-ui-1.8.20.js" />
