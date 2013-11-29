@@ -133,6 +133,7 @@
     </Compile>
     <Compile Include="Models\Mappers\PosterViewModelMapper.cs" />
     <Compile Include="Models\PosterImage.cs" />
+    <Compile Include="Models\ViewModels\IndexViewModel.cs" />
     <Compile Include="Models\ViewModels\PosterListViewModel.cs" />
     <Compile Include="Models\ViewModels\PosterViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

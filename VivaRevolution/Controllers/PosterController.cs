@@ -19,14 +19,21 @@ namespace VivaRevolution.Controllers
         }
         
         public ActionResult Index()
-        {            
-            PosterViewModel vm = new PosterViewModel
+        {
+            GetLoginName();
+            
+            IndexViewModel vm = new IndexViewModel
             {
-                ImgId = "dv",
-                Quote = "when I invented the death star, I didnt have to ask anyones permission",
-                Name = "darth vader",
-                Title = "sith lord, supreme commander",
-                TagLine = "Join the dark side"
+                FeaturePoster = new Poster
+                {
+                    ImgId = "am",
+                    Quote = "when I invented Compare the Meerkat, I didnt have to ask anyones permission",
+                    Name = "darth vader",
+                    Title = "sith lord, supreme commander",
+                    TagLine = "Simples"
+                },
+
+                FeaturePosters = new PosterListViewModel(repository.Posters)
             };
 
             return View(vm);

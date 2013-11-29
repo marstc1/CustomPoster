@@ -77,7 +77,14 @@ namespace VivaRevolution.Domain.Entities
         {
             get
             {
-                return this.imgCat;
+                if (String.IsNullOrEmpty(this.imgCat))
+                {
+                    return string.Empty;
+                }
+                else
+                {
+                    return String.Format("{0}/", this.imgCat);
+                }
             }
             set
             {
@@ -107,14 +114,12 @@ namespace VivaRevolution.Domain.Entities
         public string PrivateKey { get; set; }
 
         //TODO: move into the view model class
-        //public string ImagePath
-        //{
-        //    get
-        //    {
-        //        string folder = (!String.IsNullOrEmpty(this.imgCat)) ? String.Format("{0}/", this.imgCat) : String.Empty;
-                
-        //        return string.Format("{0}{1}.gif", folder, imgId);
-        //    }
-        //}
+        public string ImagePath
+        {
+            get
+            {
+                return string.Format("{0}{1}.gif", ImgCat, imgId);
+            }
+        }
     }
 }

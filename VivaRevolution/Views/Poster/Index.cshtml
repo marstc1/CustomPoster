@@ -1,5 +1,100 @@
-﻿@model VivaRevolution.Models.ViewModels.PosterViewModel
+﻿@model VivaRevolution.Models.ViewModels.IndexViewModel
 
 @{
     ViewBag.Title = "Join the digital revolution";
 }
+
+        <section class="intro" id="pw-intro">
+            <div class="nav" id="pw-nav">
+                <img class="logo" id="pw-logo" src="~/Content/images/logo.gif" />
+                <ul>
+                    <li>Create</li>
+                    <li><a class="scroll" href="#pw-latest">Latest</a></li>
+                    <li><a class="scroll" href="#pw-top-rated">Top Rated</a></li>
+                </ul>
+            </div>
+
+            <div class="promo-poster-container" id="pw-promo-poster-container">
+                <img class="promo-poster shadow" src="~/Content/images/promo-poster.jpg" />
+            </div>
+
+            <div class="featured-posters-container shadow border" id="pw-featured-posters-container">
+
+@*                <div class="poster" id="pw-poster1">
+                    <div class="poster-top">
+                        <div class="quote large">@Model.FeaturePoster.Quote</div>
+                        <div class="name small">@Model.FeaturePoster.Name@Model.FeaturePoster.Title</div>
+                        <div class="posterImg"><img src="~/Content/images/posterId/@Model.FeaturePoster.ImagePath" /></div>
+                    </div>
+                    <div class="poster-tagline-container">
+                        <div class="poster-tagline">
+                            @Model.FeaturePoster.TagLine
+                        </div>
+                    </div>
+                </div>*@
+
+                @{var i = 1;}
+                @foreach (var fp in @Model.FeaturePosters.Posters)
+                {                    
+                    <div class="poster" id="pw-poster-@i" style="display: none;">
+                        <div class="poster-top">
+                            <div class="quote large">@fp.Quote</div>
+                            <div class="name small">@fp.Title</div>
+                            <div class="posterImg"><img src="~/Content/images/posterId/@fp.ImagePath" /></div>
+                        </div>
+                        <div class="poster-tagline-container">
+                            <div class="poster-tagline">
+                                @fp.TagLine
+                            </div>
+                        </div>
+                    </div>   
+                    
+                    i++ ;
+                }
+
+            </div>
+        </section>
+
+        <section class="social-media mainBody" id="pw-social-media">
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+
+            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+            <hr />
+        </section>
+
+        <section class="latest mainBody" id="pw-latest">
+            <h2>Latest</h2>
+        </section>
+
+        <section class="top-rated mainBody" id="pw-top-rated">
+            <h2>Top Rated</h2>
+        </section>
+
+<script type="text/javascript">
+    $(document).ready(function (event) {
+        $('#pw-poster-2').show();
+    });
+
+    $(".scroll").click(function (event) {
+        event.preventDefault();
+        //calculate destination place
+        var dest = 0;
+        if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
+            dest = $(document).height() - $(window).height();
+        } else {
+            dest = $(this.hash).offset().top;
+        }
+        //go to destination
+        $('html,body').animate({ scrollTop: dest }, 1000, 'swing');
+    });
+</script>
