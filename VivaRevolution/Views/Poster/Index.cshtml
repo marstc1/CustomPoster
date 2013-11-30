@@ -20,7 +20,7 @@
 
             <div class="featured-posters-container shadow border" id="pw-featured-posters-container">
 
-@*                <div class="poster" id="pw-poster1">
+                <div class="poster" id="pw-poster1">
                     <div class="poster-top">
                         <div class="quote large">@Model.FeaturePoster.Quote</div>
                         <div class="name small">@Model.FeaturePoster.Name@Model.FeaturePoster.Title</div>
@@ -31,26 +31,7 @@
                             @Model.FeaturePoster.TagLine
                         </div>
                     </div>
-                </div>*@
-
-                @{var i = 1;}
-                @foreach (var fp in @Model.FeaturePosters.Posters)
-                {                    
-                    <div class="poster" id="pw-poster-@i" style="display: none;">
-                        <div class="poster-top">
-                            <div class="quote large">@fp.Quote</div>
-                            <div class="name small">@fp.Title</div>
-                            <div class="posterImg"><img src="~/Content/images/posterId/@fp.ImagePath" /></div>
-                        </div>
-                        <div class="poster-tagline-container">
-                            <div class="poster-tagline">
-                                @fp.TagLine
-                            </div>
-                        </div>
-                    </div>   
-                    
-                    i++ ;
-                }
+                </div>
 
             </div>
         </section>
@@ -74,6 +55,26 @@
 
         <section class="latest mainBody" id="pw-latest">
             <h2>Latest</h2>
+
+            @{var i = 1;}
+            @foreach (var fp in @Model.FeaturePosters.Posters)
+            {                    
+                <div class="poster" id="pw-poster-@i" style="display: none;">
+                    <div class="poster-top">
+                        <div class="quote large">@fp.Quote</div>
+                        <div class="name small">@fp.Title</div>
+                        <div class="posterImg"><img src="~/Content/images/posterId/@fp.ImagePath" /></div>
+                    </div>
+                    <div class="poster-tagline-container">
+                        <div class="poster-tagline">
+                            @fp.TagLine
+                        </div>
+                    </div>
+                </div>   
+                    
+                i++ ;
+            }
+
         </section>
 
         <section class="top-rated mainBody" id="pw-top-rated">

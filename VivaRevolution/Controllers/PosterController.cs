@@ -27,10 +27,10 @@ namespace VivaRevolution.Controllers
                 FeaturePoster = new Poster
                 {
                     ImgId = "am",
-                    Quote = "when I invented Compare the Meerkat, I didnt have to ask anyones permission",
-                    Name = "darth vader",
-                    Title = "sith lord, supreme commander",
-                    TagLine = "Simples"
+                    Quote = "All you need is a computermabob with extra large RAM jar and floppy box",
+                    Name = "Aleksandr Orlov",
+                    Title = "Founder of comparethemeerkat.com",
+                    TagLine = "Simples!"
                 },
 
                 FeaturePosters = new PosterListViewModel(repository.Posters)
