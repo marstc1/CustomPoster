@@ -27,9 +27,9 @@ namespace VivaRevolution.Controllers
                 FeaturePoster = new Poster
                 {
                     ImgId = "am",
-                    Quote = "All you need is a computermabob with extra large RAM jar and floppy box",
+                    Quote = "ALL YOU NEED IS A COMPUTERMABOB WITH EXTRA LARGE RAM JAR AND FLOPPY BOX",
                     Name = "Aleksandr Orlov",
-                    Title = "Founder of comparethemeerkat.com",
+                    Title = " - Founder of comparethemeerkat",
                     TagLine = "Simples!"
                 },
 
