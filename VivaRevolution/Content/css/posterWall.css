@@ -24,11 +24,11 @@ body {
 
 a {
     text-decoration: none; 
-    color: #fff; 
+    color: #ffe700; 
 }
 
     a:hover {
-            color: #ffe700; 
+            color: #fff; 
     }
 
 h2 {
@@ -131,8 +131,9 @@ h2 {
     padding: 10px 55px;
     margin: 5px auto 0px;
     background-color: #000;
-    color: #fff;
+    color: #999;
     font-size: 75%;
+    background: #000 url(../images/shared/bg_footer.gif) 0 0 no-repeat;
 }
 
     .footer h2 {
@@ -260,4 +261,18 @@ form .button {
 
 .login {
     width: 150px;
+}
+
+textarea, input, select, .dark {
+    background-color: #302F2F;
+    color: #fff;
+    border: #444 solid 1px;
+}
+
+textarea, input, select, .rounded {
+    padding: 5px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }

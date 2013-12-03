@@ -185,6 +185,7 @@
     <Content Include="Content\images\poster\bg_tagline.gif" />
     <Content Include="Content\images\poster\bg_top.gif" />
     <Content Include="Content\images\promo-poster.jpg" />
+    <Content Include="Content\images\shared\bg_footer.gif" />
     <Content Include="Content\images\shared\bg_header-inner.jpg" />
     <Content Include="Content\images\shared\bg_main.png" />
     <Content Include="Content\images\shared\bg_poster-inner.jpg" />
