@@ -1,0 +1,48 @@
+﻿@model VivaRevolution.Models.ViewModels.PosterViewModel
+
+@using (Html.BeginForm("", "poster", FormMethod.Post, new { encType = "multipart/form-data" }))
+{                             
+    <div>
+        @Html.LabelFor(x => x.Quote)
+        @Html.TextAreaFor(x => x.Quote, new { @maxlength="150" })
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Name)
+        @Html.TextBoxFor(x => x.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Title)
+        @Html.TextBoxFor(x => x.Title)
+    </div>
+     
+    <div>            
+        @Html.LabelFor(x => x.Images)
+    </div>
+
+    <div>
+        <select id="ImgId" class="wide" name="ImgId">
+            @foreach (var image in Model.Images)
+            {
+                if (image.ImageValue == "dv")
+                {
+                    <option selected="selected" value="@image.ImageValue">@image.ImageName</option>
+                }
+                else
+                {
+                    <option value="@image.ImageValue">@image.ImageName</option>
+                }
+            }
+        </select>
+    </div>
+                    
+    <div>
+        @Html.LabelFor(x => x.TagLine)
+        @Html.TextBoxFor(x => x.TagLine)
+    </div>
+                    
+    <div>
+        <input type="submit" name="Submit" class="button" id="Submit" value="Post It!" />
+    </div>
+}

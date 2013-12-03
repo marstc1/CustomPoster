@@ -143,6 +143,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\css\960_24_col.css" />
+    <Content Include="Content\css\850_24_col.css" />
     <Content Include="Content\css\posterWall.css" />
     <Content Include="Content\css\form.css" />
     <Content Include="Content\css\vivaRevolution.css" />
@@ -216,6 +217,8 @@
     <Content Include="Views\Poster\List.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Poster\IndexOld.cshtml" />
+    <Content Include="Views\Shared\_createPoster.cshtml" />
+    <Content Include="Views\Shared\_listOfPosters.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

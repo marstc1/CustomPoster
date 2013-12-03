@@ -1,0 +1,19 @@
+﻿@model IQueryable<VivaRevolution.Domain.Entities.Poster>
+
+@{  
+    foreach (var p in @Model)
+    {                    
+        <div class="poster-container lightShadow border thumbnail">
+            <div class="poster-top">
+                <div class="quote large">@p.Quote</div>
+                <div class="name small">@p.Name @p.Title</div>
+                <div class="posterImg"><img src="~/Content/images/posterId/@p.ImagePath" /></div>
+            </div>
+            <div class="poster-tagline-container">
+                <div class="poster-tagline">
+                    @p.TagLine
+                </div>
+            </div>  
+        </div>
+    }
+}

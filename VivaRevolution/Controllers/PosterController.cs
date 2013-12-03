@@ -22,7 +22,7 @@ namespace VivaRevolution.Controllers
         {
             GetLoginName();
             
-            IndexViewModel vm = new IndexViewModel
+            IndexViewModel vm = new IndexViewModel(this.repository)
             {
                 FeaturePoster = new Poster
                 {
@@ -31,9 +31,7 @@ namespace VivaRevolution.Controllers
                     Name = "Aleksandr Orlov",
                     Title = " - Founder of comparethemeerkat",
                     TagLine = "Simples!"
-                },
-
-                FeaturePosters = new PosterListViewModel(repository.Posters)
+                }
             };
 
             return View(vm);

@@ -132,7 +132,12 @@ h2 {
     margin: 5px auto 0px;
     background-color: #000;
     color: #fff;
+    font-size: 75%;
 }
+
+    .footer h2 {
+        padding: 40px 0 5px;
+    }
 
 /* POSTER
 ---------------------------------------------------- */
@@ -214,3 +219,45 @@ h2 {
         text-align: center;
         padding-top: 20px;
     }
+
+/* FORM
+---------------------------------------------------- */
+form label {
+    display: block;
+}
+
+form textarea, input, select {
+    width: 350px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+form textarea {
+    height: 5em;
+}
+
+form input {
+    line-height: 2.5em;
+}
+
+form select {
+    height: 3em;
+}
+
+
+form .button {
+    width: 100px;
+    height: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    float: right;
+}
+
+.login {
+    width: 150px;
+}
