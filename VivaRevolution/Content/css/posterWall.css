@@ -243,20 +243,28 @@ form input {
 
 form select {
     height: 3em;
+    width: 360px;
 }
 
 
 form .button {
     width: 100px;
-    height: 50px;
-    color: white;
+    height: 45px;
+    color: #FFE700;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 15px;
     display: block;
     text-align: center;
     position: relative;
     cursor: pointer;
     float: right;
+    padding: 0;
+    margin-top: 50px;
+    margin-right: 15px;
+}
+
+form .button:hover {
+    color: white;
 }
 
 .login {

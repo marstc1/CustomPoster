@@ -45,6 +45,7 @@ namespace VivaRevolution.Controllers
                                   string imgId, 
                                   string tagline)
         {
+            Random r = new Random();
             Poster poster = new Poster
             {
                 Quote = (!String.IsNullOrEmpty(quote)) ? quote.ToUpper() : string.Empty,
@@ -54,14 +55,14 @@ namespace VivaRevolution.Controllers
                 ImgId = (!String.IsNullOrEmpty(imgId)) ? imgId : "tb",
                 TagLine = (!String.IsNullOrEmpty(tagline)) ? tagline : "Join the digital revolution",
                 Private = false,
-                PrivateKey = String.Empty,
+                PrivateKey = r.Next(100, 999).ToString(),
                 CreatedBy = GetLoginName(),
                 DateCreated = DateTime.Now
             };
             
             repository.SavePoster(poster);
             
-            return RedirectToAction("Latest");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Preview(string quote, string name, string title, string imgCat, string imgId, string tagline)
@@ -79,13 +80,24 @@ namespace VivaRevolution.Controllers
             return View("View", vm);
         }
 
-        public ActionResult View(int id)
+        public ActionResult View(int id, string key)
         {
-            PosterListViewModel vm = new PosterListViewModel(repository.Posters);
+            Poster vm = repository.Posters.FirstOrDefault(x => x.PosterId == id);
 
-            vm.Posters = vm.Posters.Where(x => x.PosterId == id);
+            if (vm == null || vm.PrivateKey != key)
+            {
+                vm = new Poster
+                {
+                    Quote = "THESE ARE NOT THE DROIDS YOU'RE LOOKING FOR",
+                    Name = "Storm Trooper",
+                    Title = "",
+                    ImgCat = "",
+                    ImgId = "st",
+                    TagLine = "404 Not found!"
+                };
+            }
 
-            return View("List", vm);
+            return View("View", vm);
         }
 
         public ActionResult Latest()

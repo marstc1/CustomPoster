@@ -204,6 +204,7 @@
     <Content Include="Content\scripts\jquery.validate.min.js" />
     <Content Include="Content\scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Content\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\scripts\pw.Jquery.pageScroll.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -217,9 +218,11 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Poster\List.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Poster\IndexOld.cshtml" />
     <Content Include="Views\Shared\_createPoster.cshtml" />
     <Content Include="Views\Shared\_listOfPosters.cshtml" />
+    <Content Include="Views\Shared\_socialMedia.cshtml" />
+    <Content Include="Views\Shared\_footer.cshtml" />
+    <Content Include="Views\Shared\_navigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -229,9 +232,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Poster\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\_Layoutold.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\_ViewStart.cshtml" />

@@ -43,7 +43,7 @@ namespace VivaRevolution.Models.ViewModels
             }
         }
 
-        [Display(Name = "What did they say ...")]
+        [Display(Name = "Quote ...")]
         public string Quote
         {
             get

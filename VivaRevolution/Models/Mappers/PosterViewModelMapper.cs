@@ -28,7 +28,7 @@ namespace VivaRevolution.Models.Mappers
             list.Add(new PosterImage { ImageValue = "hsm", ImageName = "George Peppard" });
             list.Add(new PosterImage { ImageValue = "-", ImageName = "--- Music ---" });
             list.Add(new PosterImage { ImageValue = "bd", ImageName = "Bob Dylan" });
-            list.Add(new PosterImage { ImageValue = "bd", ImageName = "Dave Grohl" });
+            list.Add(new PosterImage { ImageValue = "dg", ImageName = "Dave Grohl" });
             list.Add(new PosterImage { ImageValue = "-", ImageName = "--- Movies ---" });
             list.Add(new PosterImage { ImageValue = "ce", ImageName = "Clint Eastwood" });
             list.Add(new PosterImage { ImageValue = "cn", ImageName = "Chuck Norris" });
