@@ -6,25 +6,91 @@
 
 
 @section intro {
+        <style>
+            #slideshow { 
+                position: relative; 
+                width: 304px; 
+                height: 455px; 
+            }
+
+            #slideshow > div { 
+                position: absolute; 
+            }
+
+            .selected {
+                color: #FFE700;
+            }
+
+            .navItem {
+                position: absolute;
+                top: 480px;
+                font-size: 1.5em;
+            }
+
+            #nav1 {
+                left: 100px;
+            }
+
+            #nav2 {
+                left: 150px;
+            }
+                        
+            #nav3 {
+                left: 200px;
+            }
+        </style>
+    
         <div class="promo-poster-container" id="pw-promo-poster-container">
             <img class="promo-poster shadow" src="~/Content/images/promo-poster.jpg" />
         </div>
 
-        <div class="featured-posters-container shadow border" id="pw-featured-posters-container">
-
-            <div class="poster" id="pw-poster1">
-                <div class="poster-top">
-                    <div class="quote large">@Model.FeaturePoster.Quote</div>
-                    <div class="name small">@Model.FeaturePoster.Name@Model.FeaturePoster.Title</div>
-                    <div class="posterImg"><img src="~/Content/images/posterId/@Model.FeaturePoster.ImagePath" /></div>
-                </div>
-                <div class="poster-tagline-container">
-                    <div class="poster-tagline">
-                        @Model.FeaturePoster.TagLine
+        <div class="featured-posters-container" id="pw-featured-posters-container">
+            <div id="slideshow">
+                @foreach (var featurePoster in @Model.FeaturePosters)
+                {                
+                <div class="poster shadow border slide">
+                    <div class="poster-top">
+                        <div class="quote large">@featurePoster.Quote</div>
+                        <div class="name small">@featurePoster.Name@featurePoster.Title</div>
+                        <div class="posterImg"><img src="~/Content/images/posterId/@featurePoster.ImagePath" /></div>
+                    </div>
+                    <div class="poster-tagline-container">
+                        <div class="poster-tagline">
+                            @featurePoster.TagLine
+                        </div>
                     </div>
                 </div>
+                }
+@*                <div class="poster shadow border slide" id="pw-poster2">
+                    <div class="poster-top">
+                        <div class="quote large">@Model.FeaturePoster.Quote</div>
+                        <div class="name small">@Model.FeaturePoster.Name@Model.FeaturePoster.Title</div>
+                        <div class="posterImg"><img src="~/Content/images/posterId/@Model.FeaturePoster.ImagePath" /></div>
+                    </div>
+                    <div class="poster-tagline-container">
+                        <div class="poster-tagline">
+                            Something
+                        </div>
+                    </div>
+                </div>
+                <div class="poster shadow border slide" id="pw-poster3">
+                    <div class="poster-top">
+                        <div class="quote large">@Model.FeaturePoster.Quote</div>
+                        <div class="name small">@Model.FeaturePoster.Name@Model.FeaturePoster.Title</div>
+                        <div class="posterImg"><img src="~/Content/images/posterId/@Model.FeaturePoster.ImagePath" /></div>
+                    </div>
+                    <div class="poster-tagline-container">
+                        <div class="poster-tagline">
+                            Something else
+                        </div>
+                    </div>
+                </div>*@
             </div>
-
+            <div id="nav">
+                <div id="nav1" class="navItem">&diams;</div>
+                <div id="nav2" class="navItem">&diams;</div>
+                <div id="nav3" class="navItem">&diams;</div>
+            </div>
         </div>
 }
 
@@ -45,6 +111,40 @@
 
 
 @section scripts {
+    <script>
+        $("#slideshow > div:gt(0)").hide();
+        $('#nav > div:first').addClass('selected');
+
+        setInterval(function () {
+
+            $('#slideshow > div:first')
+
+            .fadeOut(500)
+            .next()
+            .delay(1000)
+            .fadeIn(500)
+            .end()
+            .appendTo('#slideshow');
+
+          $('#nav > div:first')
+            .removeClass('selected')
+            .next()
+            .addClass('selected')
+            .end()
+            .appendTo('#nav');
+
+        }, 10000);
+
+        function setSelectedDiv() {
+            if ($("#pw-poster1").is(":visible")) {
+                $('#nav1').addClass("selected");
+            }
+            else {
+                $('#nav1').removeClass("selected");
+            }
+        };
+    </script>
+
 @*    <script type="text/javascript">
         $(".jqView").click(function (event) {
             event.preventDefault();

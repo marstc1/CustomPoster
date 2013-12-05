@@ -24,11 +24,15 @@ body {
 
 a {
     text-decoration: none; 
-    color: #ffe700; 
+    color: #ffe700;
 }
 
     a:hover {
-            color: #fff; 
+        color: #fff; 
+    }
+
+    a, img {
+        border:none;
     }
 
 h2 {
