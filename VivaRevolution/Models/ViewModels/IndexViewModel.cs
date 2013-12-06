@@ -34,11 +34,12 @@ namespace VivaRevolution.Models.ViewModels
             get 
             {
                 featurePosters = new List<Poster>();
+                int maxRandomNo = this.AllPosters.Count() - 1;
                 int i;
 
                 while (featurePosters.Count() < 3)
                 {
-                    i = this.r.Next( this.AllPosters.Count() );
+                    i = this.r.Next(maxRandomNo);
                     featurePosters.Add(repository.Posters.FirstOrDefault(x => x.PosterId == i));                    
                 }
 
