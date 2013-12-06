@@ -197,6 +197,7 @@
     <Content Include="Content\scripts\jquery-ui-1.8.20.js" />
     <Content Include="Content\scripts\jquery-ui-1.8.20.min.js" />
     <Content Include="Content\scripts\jquery.form-validation.js" />
+    <Content Include="Content\scripts\pw.jquery.PosterSlideShow.js" />
     <Content Include="Content\scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Content\scripts\jquery.unobtrusive-ajax.min.js" />
     <None Include="Content\scripts\jquery.validate-vsdoc.js" />

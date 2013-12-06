@@ -75,6 +75,14 @@ h2 {
         text-align: right;
     }
 
+    .featured-posters-container .blank {
+        position: absolute;
+        background-color: white;
+        width: 312px;
+        height: 463px;
+        opacity: 0.3;
+    }
+
 .promo-poster-container, .featured-posters-container {
     position: absolute;
     text-align: left;
@@ -287,4 +295,39 @@ textarea, input, select, .rounded {
     border-bottom-right-radius: 3px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+}
+
+/* POSTER SLIDE SHOW
+---------------------------------------------------- */
+
+#slideshow { 
+    position: relative; 
+    width: 304px; 
+    height: 455px; 
+}
+
+#slideshow > div { 
+    position: absolute; 
+}
+
+.selected {
+    color: #FFE700;
+}
+
+.navItem {
+    position: absolute;
+    top: 480px;
+    font-size: 1.5em;
+}
+
+#bullet1 {
+    left: 100px;
+}
+
+#bullet2 {
+    left: 150px;
+}
+                        
+#bullet3 {
+    left: 200px;
 }

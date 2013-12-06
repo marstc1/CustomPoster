@@ -12,13 +12,10 @@ namespace VivaRevolution.Models.ViewModels
     public class IndexViewModel
     {
         private IPosterRepository repository;
-        private List<Poster> featurePosters;
-        private Random r;
 
         public IndexViewModel(IPosterRepository repo)
         {
             this.repository = repo;
-            r = new Random();
         }
 
         public Poster FeaturePoster { get; set; }
@@ -33,17 +30,7 @@ namespace VivaRevolution.Models.ViewModels
         public List<Poster> FeaturePosters {
             get 
             {
-                featurePosters = new List<Poster>();
-                int maxRandomNo = this.AllPosters.Count() - 1;
-                int i;
-
-                while (featurePosters.Count() < 3)
-                {
-                    i = this.r.Next(maxRandomNo);
-                    featurePosters.Add(repository.Posters.FirstOrDefault(x => x.PosterId == i));                    
-                }
-
-                return featurePosters;
+                return repository.Posters.OrderBy(x => Guid.NewGuid()).Take(3).ToList();
             }
         }
 
@@ -51,7 +38,7 @@ namespace VivaRevolution.Models.ViewModels
         {
             get
             {
-                return this.AllPosters.OrderByDescending(x => x.DateCreated).Take(3);
+                return repository.Posters.OrderByDescending(x => x.DateCreated).Take(6);
             }
         }
 
@@ -59,7 +46,7 @@ namespace VivaRevolution.Models.ViewModels
         {
             get
             {
-                return this.AllPosters.OrderBy(x => x.DateCreated).Take(3);
+                return repository.Posters.OrderBy(x => x.DateCreated).Take(3);
             }
         }
     }
