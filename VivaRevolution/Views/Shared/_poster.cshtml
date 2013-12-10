@@ -1,0 +1,14 @@
+﻿@model VivaRevolution.Domain.Entities.Poster
+
+    <div class="poster shadow border">
+        <div class="poster-top">
+            <div class="quote large">@Model.Quote.ToUpper()</div>
+            <div class="name small">@Model.Name.ToUpper() @Model.Title.ToUpper()</div>
+            <div class="posterImg"><img src="~/Content/images/posterId/@Model.ImagePath" /></div>
+        </div>
+        <div class="poster-tagline-container">
+            <div class="poster-tagline">
+                @Model.TagLine
+            </div>
+        </div>
+    </div>

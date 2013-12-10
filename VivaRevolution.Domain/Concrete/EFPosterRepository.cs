@@ -8,6 +8,7 @@ namespace VivaRevolution.Domain.Concrete
     public class EFPosterRepository : IPosterRepository
     {
         private EFDbContext context = new EFDbContext();
+        private Random r;
 
         public IQueryable<Poster> Posters
         {
@@ -16,6 +17,9 @@ namespace VivaRevolution.Domain.Concrete
 
         public void SavePoster(Poster poster)
         {
+            r = new Random();
+            poster.PrivateKey = r.Next(100, 999).ToString();
+            poster.DateCreated = DateTime.Now;
             context.Posters.Add(poster);
 
             context.SaveChanges();

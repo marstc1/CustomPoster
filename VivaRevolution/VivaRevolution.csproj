@@ -187,6 +187,7 @@
     <Content Include="Content\images\promo-poster.jpg" />
     <Content Include="Content\images\shared\bg_footer.gif" />
     <Content Include="Content\images\shared\bg_header-inner.jpg" />
+    <Content Include="Content\images\shared\bg_lightbox.png" />
     <Content Include="Content\images\shared\bg_main.png" />
     <Content Include="Content\images\shared\bg_poster-inner.jpg" />
     <None Include="Content\scripts\jquery-1.7.1.intellisense.js" />
@@ -224,6 +225,8 @@
     <Content Include="Views\Shared\_socialMedia.cshtml" />
     <Content Include="Views\Shared\_footer.cshtml" />
     <Content Include="Views\Shared\_navigation.cshtml" />
+    <Content Include="Views\Shared\_poster.cshtml" />
+    <Content Include="Views\Poster\_preview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

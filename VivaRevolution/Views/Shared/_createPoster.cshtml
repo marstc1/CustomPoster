@@ -1,48 +1,111 @@
 ﻿@model VivaRevolution.Models.ViewModels.PosterViewModel
 
-@using (Html.BeginForm("", "poster", FormMethod.Post, new { encType = "multipart/form-data" }))
-{                             
+                           
     <div>
-        @Html.LabelFor(x => x.Quote)
-        @Html.TextAreaFor(x => x.Quote, new { @maxlength="150" })
-    </div>
-
-    <div>
-        @Html.LabelFor(x => x.Name)
-        @Html.TextBoxFor(x => x.Name)
-    </div>
-
-    <div>
-        @Html.LabelFor(x => x.Title)
-        @Html.TextBoxFor(x => x.Title)
-    </div>
-     
-    <div>            
-        @Html.LabelFor(x => x.Images)
+        @Html.TextAreaFor(x => x.Quote, new { @maxlength="150", placeholder="Quote ..." })
     </div>
 
     <div>
         <select id="ImgId" class="wide" name="ImgId">
+            <option value="" disabled selected>Who said it? ...</option>
             @foreach (var image in Model.Images)
             {
-                if (image.ImageValue == "dv")
+                if (String.IsNullOrEmpty(@image.ImageValue))
                 {
-                    <option selected="selected" value="@image.ImageValue">@image.ImageName</option>
+                    <option value="-" disabled>@image.ImageName</option>
                 }
                 else
                 {
-                    <option value="@image.ImageValue">@image.ImageName</option>
+                    <option value="@image.ImageValue">@image.ImageName</option>                    
                 }
             }
         </select>
     </div>
                     
     <div>
-        @Html.LabelFor(x => x.TagLine)
-        @Html.TextBoxFor(x => x.TagLine)
+        @*<input id="Preview" type="submit" name="Preview" class="preview button" value="Preview" />*@
+        <a href="#pw-preview" id="Preview" type="submit" class="preview button scroll">Preview</a>
     </div>
+    
+    @*
+
+    <div id="Lightbox">
+        <div id="PreviewContent" class="content border shadow">
+            <div class="left">
+                <div id="PreviewPoster" class="promo-poster-container">
+                    <div id="DraftPoster"></div>
+                </div>
+            </div>
+
+            <div class="right">
+                <h1>Your Poster ...</h1>
+                
+                <div id="PreviewFields">
                     
-    <div>
-        <input type="submit" name="Submit" class="button" id="Submit" value="Post It!" />
-    </div>
-}
+                    @Html.TextBoxFor(x => x.Name)
+
+                    @Html.TextBoxFor(x => x.Title, new { @Placeholder = ".. add a title, if you want" })
+
+                    @Html.TextBoxFor(x => x.TagLine, new { @Placeholder = ".. add your own tag line too, if you want" })
+                </div>
+
+                <div>
+                    <p>Please post responsibly, please don't loose your job .. remember <strong>YOU are responsible</strong> for what YOU post!</p><br />
+                    <p>OK, got it! <input type="checkbox" name="chkAgree" /></p>
+                </div>
+
+                <div id="PreviewButtons">
+                    <input id="Post" type="submit" name="Post" class="button" value="Post" />
+
+                    <input id="Update" type="button" name="Update" class="preview button" value="Update" />
+
+                    <input id="Close" type="button" name="Close" class="button" value="Close" />
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+<script>
+    $(document).ready(function () {
+        $('#pw-preview').hide();
+    });
+
+    //Auto fill the hidden Name field with the drop down text value
+    $("#ImgId").change(function (event) {
+        var selectedValue = $("#ImgId option:selected").text();
+        $("#Name").val(selectedValue);
+    });
+
+    //Show preview of poster in light box
+    $(".preview").click(function (event) {
+        event.preventDefault();
+
+        //Values for model
+        var values =
+            {
+                "quote": $("#Quote").val(),
+                "imgId": $("#ImgId").val(),
+                "name": $("#Name").val(),
+                "title": $("#Title").val(),
+                "tagLine": $("#TagLine").val()
+            }
+
+        //Ajax post to _Preview action method
+        //Passes in the model values in the values variable
+        //This will return the _preview partial view in the data variable populated with model values
+        $.post("@Url.Action("_Preview", "Poster")", values, function (data) {
+            success: {
+                $("#DraftPoster").html(data);
+                $('#pw-preview').show();
+            }
+        });
+
+        //return false;
+    });
+
+    //Close the lightbox
+    $('#Close').live('click', function () {
+        $('#Lightbox').hide();
+    });
+</script>

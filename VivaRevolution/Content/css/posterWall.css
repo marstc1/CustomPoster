@@ -16,7 +16,7 @@ padding : 0;
 
 
 body {
-	font: 14px/24px helvetica, arial, sans-serif;
+	font: 14px helvetica, arial, sans-serif;
     background: #ccc url(../images/body_bg.jpg) repeat-y top center;
     color: #000;
     text-align: center;
@@ -35,7 +35,11 @@ a {
         border:none;
     }
 
-h2 {
+h1 {
+    font-size: 2em;
+}
+
+h1, h2 {
     font-family: capture_itregular;
     font-weight: normal;
 }
@@ -107,7 +111,7 @@ h2 {
 
     .nav ul {
         float: right;
-        margin: 20px 50px 0 0;
+        margin: 24px 50px 0 0;
     }
 
     .nav li {
@@ -149,6 +153,7 @@ h2 {
 }
 
     .footer h2 {
+        color: gray;
         padding: 40px 0 5px;
     }
 
@@ -214,7 +219,6 @@ h2 {
 .posterImg {
     position: absolute; 
     bottom: 85px; 
-    right: 0;
     opacity: 0.75;
 }
 
@@ -243,10 +247,12 @@ form textarea, input, select {
     width: 350px;
     display: block;
     margin-bottom: 10px;
+    resize: none; 
 }
 
 form textarea {
     height: 5em;
+    font-family: inherit;
 }
 
 form input {
@@ -258,25 +264,34 @@ form select {
     width: 360px;
 }
 
+option {
+    color: #aaa;
+}
+
+option:disabled {
+    color: white;
+}
+
 
 form .button {
     width: 100px;
     height: 45px;
-    color: #FFE700;
+    color: #000;
+    background-color: #444;
     text-decoration: none;
     font-size: 15px;
+    font-weight: bold;
     display: block;
     text-align: center;
     position: relative;
     cursor: pointer;
     float: right;
     padding: 0;
-    margin-top: 50px;
     margin-right: 15px;
 }
 
 form .button:hover {
-    color: white;
+    background-color: #FFE700;
 }
 
 .login {
@@ -296,6 +311,13 @@ textarea, input, select, .rounded {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
+
+    input[type=checkbox] {
+        display: inline-block;
+        width: auto;
+        line-height: 1em;
+        margin-left: 0.5em;
+    }
 
 /* POSTER SLIDE SHOW
 ---------------------------------------------------- */
@@ -331,3 +353,43 @@ textarea, input, select, .rounded {
 #bullet3 {
     left: 200px;
 }
+
+/* Lightbox
+---------------------------------------------------- */
+
+#Lightbox {
+    position:fixed; /* keeps the lightbox window in the current viewport */
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url(../images/shared/bg_lightbox.png) repeat;
+    text-align:center;
+}
+
+    #Lightbox .content {
+        position: relative;
+        margin: 50px auto;
+        text-align: center;
+        background: black;
+        width: 850px;
+        min-height: 463px;
+        padding: 20px;
+        vertical-align:middle;
+    }
+
+    #PreviewContent .right {
+        float: right;
+        text-align: left;
+        width: 50%;
+    }
+
+    #PreviewContent #PreviewFields {
+        margin: 30px 5px;
+    }
+
+    #PreviewContent #PreviewButtons {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+    }

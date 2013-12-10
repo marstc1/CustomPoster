@@ -18,8 +18,6 @@ namespace VivaRevolution.Models.ViewModels
             this.repository = repo;
         }
 
-        public Poster FeaturePoster { get; set; }
-
         public IQueryable<Poster> AllPosters {
             get
             {

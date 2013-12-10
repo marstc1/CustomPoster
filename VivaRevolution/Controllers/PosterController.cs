@@ -22,69 +22,38 @@ namespace VivaRevolution.Controllers
         {
             GetLoginName();
             
-            IndexViewModel vm = new IndexViewModel(this.repository)
-            {
-                FeaturePoster = new Poster
-                {
-                    ImgId = "am",
-                    Quote = "ALL YOU NEED IS A COMPUTERMABOB WITH EXTRA LARGE RAM JAR AND FLOPPY BOX",
-                    Name = "Aleksandr Orlov",
-                    Title = " - Founder of comparethemeerkat",
-                    TagLine = "Simples!"
-                }
-            };
+            IndexViewModel vm = new IndexViewModel(this.repository);
 
             return View(vm);
         }
 
         [HttpPost]
-        public ActionResult Index(string quote, 
-                                  string name, 
-                                  string title, 
-                                  string imgCat, 
-                                  string imgId, 
-                                  string tagline)
+        public ActionResult Index(Poster poster, string preview, string post)
         {
-            Random r = new Random();
-            Poster poster = new Poster
+            if (preview != null)
             {
-                Quote = (!String.IsNullOrEmpty(quote)) ? quote.ToUpper() : string.Empty,
-                Name = (!String.IsNullOrEmpty(name)) ? name.ToUpper() : string.Empty,
-                Title = (!String.IsNullOrEmpty(title)) ? string.Format(" - {0}", title.ToUpper()) : string.Empty,
-                ImgCat = (!String.IsNullOrEmpty(imgCat)) ? imgCat : string.Empty,
-                ImgId = (!String.IsNullOrEmpty(imgId)) ? imgId : "tb",
-                TagLine = (!String.IsNullOrEmpty(tagline)) ? tagline : "Join the digital revolution",
-                Private = false,
-                PrivateKey = r.Next(100, 999).ToString(),
-                CreatedBy = GetLoginName(),
-                DateCreated = DateTime.Now
-            };
-            
-            repository.SavePoster(poster);
-            
-            return RedirectToAction("Index");
-        }
+                return View("Preview", poster);
+            }
 
-        public ActionResult Preview(string quote, string name, string title, string imgCat, string imgId, string tagline)
-        {
-            PosterViewModel vm = new PosterViewModel
+            else if (post != null)
             {
-                Quote = (!String.IsNullOrEmpty(quote)) ? quote.ToUpper() : string.Empty,
-                Name = (!String.IsNullOrEmpty(name)) ? name.ToUpper(): string.Empty,
-                Title = (!String.IsNullOrEmpty(title)) ? string.Format(" - {0}", title.ToUpper()) : string.Empty,
-                ImgCat = (!String.IsNullOrEmpty(imgCat)) ? imgCat : string.Empty,
-                ImgId = (!String.IsNullOrEmpty(imgId)) ? imgId : "tb",
-                TagLine = (!String.IsNullOrEmpty(tagline)) ? tagline : "Join the digital revolution",
-            };
-            
-            return View("View", vm);
+                poster.CreatedBy = GetLoginName();
+
+                repository.SavePoster(poster);
+
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("Index");
+            }
         }
 
         public ActionResult View(int id, string key)
         {
             Poster vm = repository.Posters.FirstOrDefault(x => x.PosterId == id);
 
-            if (vm == null || vm.PrivateKey != key)
+            if (vm == null || (vm.PrivateKey != null && vm.PrivateKey != key))
             {
                 vm = new Poster
                 {
@@ -98,6 +67,12 @@ namespace VivaRevolution.Controllers
             }
 
             return View("View", vm);
+        }
+
+        [HttpPost]
+        public ActionResult _Preview(Poster poster)
+        {
+            return PartialView("_poster", poster);
         }
 
         public ActionResult Latest()

@@ -1,7 +1,7 @@
 ﻿@model VivaRevolution.Domain.Entities.Poster
 
 @{
-    ViewBag.Title = "View";
+    ViewBag.Title = @Model.Quote;
 }
 
 @section intro {
@@ -9,20 +9,12 @@
         <img class="promo-poster shadow" src="~/Content/images/promo-poster.jpg" />
     </div>
 
-    <div class="featured-posters-container shadow border" id="pw-featured-posters-container">
-
-        <div class="poster">
-            <div class="poster-top">
-                <div class="quote large">@Model.Quote</div>
-                <div class="name small">@Model.Name@Model.Title</div>
-                <div class="posterImg"><img src="~/Content/images/posterId/@Model.ImagePath" /></div>
-            </div>
-            <div class="poster-tagline-container">
-                <div class="poster-tagline">
-                    @Model.TagLine
-                </div>
-            </div>
+    <div class="featured-posters-container" id="pw-featured-posters-container">
+        <div id="slideshow">
+            @if (@Model != null)
+            {    
+                Html.RenderPartial("_poster", Model);
+            }
         </div>
-
     </div>
 }

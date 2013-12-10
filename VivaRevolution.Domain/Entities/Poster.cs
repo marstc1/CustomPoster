@@ -15,6 +15,7 @@ namespace VivaRevolution.Domain.Entities
         private string tagLine;
         private string imgCat;
         private string imgId;
+        private bool prIvate = false;
 
         [Key]
         public int PosterId { get; set; }
@@ -51,7 +52,8 @@ namespace VivaRevolution.Domain.Entities
         {
             get
             {
-                return this.title;
+                var t = (String.IsNullOrEmpty(this.title)) ? String.Empty : String.Format(" - {0}", this.title);
+                return t;
             }
             set
             {
@@ -64,7 +66,8 @@ namespace VivaRevolution.Domain.Entities
         {
             get
             {
-                return this.tagLine;
+                var tl = (String.IsNullOrEmpty(this.tagLine)) ? "Join the digital revolution" : this.tagLine;
+                return tl;
             }
             set
             {
@@ -109,7 +112,17 @@ namespace VivaRevolution.Domain.Entities
 
         public string CreatedBy { get; set; }
 
-        public bool Private { get; set; }
+        public bool Private 
+        {
+            get
+            {
+                return this.prIvate;
+            }
+            set
+            {
+                this.prIvate = value;
+            }
+        }
 
         public string PrivateKey { get; set; }
 

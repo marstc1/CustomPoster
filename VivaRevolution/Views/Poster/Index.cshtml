@@ -17,20 +17,12 @@
             <div class="blank poster"></div>
             <div id="slideshow">
                 
-                @foreach (var featurePoster in @Model.FeaturePosters)
+                @if (@Model.FeaturePosters != null && @Model.FeaturePosters.Count() >= 3)
                 {                
-                    <div class="poster shadow border slide">
-                        <div class="poster-top">
-                            <div class="quote large">@featurePoster.Quote</div>
-                            <div class="name small">@featurePoster.Name@featurePoster.Title</div>
-                            <div class="posterImg"><img src="~/Content/images/posterId/@featurePoster.ImagePath" /></div>
-                        </div>
-                        <div class="poster-tagline-container">
-                            <div class="poster-tagline">
-                                @featurePoster.TagLine
-                            </div>
-                        </div>
-                    </div>
+                    foreach (var featurePoster in @Model.FeaturePosters)
+                    {                
+                        Html.RenderPartial("_poster", featurePoster);
+                    }
                 }
 
             </div>
@@ -46,18 +38,27 @@
 <section class="top-rated mainBody" id="pw-top-rated">
     <h2>Top Rated</h2>
 
-    @{ Html.RenderPartial("_listOfPosters", Model.TopRatedPosters); }
+    @if (@Model.LatestPosters != null)
+    {    
+        Html.RenderPartial("_listOfPosters", Model.TopRatedPosters);
+    }
 
 </section>
 
 <section class="latest mainBody" id="pw-latest">
     <h2>Latest</h2>
 
-    @{ Html.RenderPartial("_listOfPosters", Model.LatestPosters); }
+    @if (@Model.FeaturePosters != null && @Model.FeaturePosters.Count() >= 3)
+    {    
+        Html.RenderPartial("_listOfPosters", Model.LatestPosters);
+    }
 
 </section>
 
 
 @section scripts {
-    <script type="text/javascript" src="~/Content/scripts/pw.jquery.PosterSlideShow.js"></script>
+    @if (@Model.FeaturePosters != null && @Model.FeaturePosters.Count() >= 3)
+    { 
+        <script type="text/javascript" src="~/Content/scripts/pw.jquery.PosterSlideShow.js"></script>
+    }
 }
