@@ -35,6 +35,31 @@ a {
         border:none;
     }
 
+        .buttonLink {
+            padding: 5px;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            line-height: 2em;
+
+            width: 100px;
+            color: #000;
+            background-color: #444;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            float: right;
+            margin-right: 15px;
+        }
+
+        .buttonLink:hover {
+            color: #000;
+            background-color: #666;
+        }
+
 h1 {
     font-size: 2em;
 }
@@ -157,6 +182,10 @@ h1, h2 {
         padding: 40px 0 5px;
     }
 
+    .footer .posterImg {
+    bottom: 92px; 
+}
+
 /* POSTER
 ---------------------------------------------------- */
 
@@ -218,7 +247,7 @@ h1, h2 {
 
 .posterImg {
     position: absolute; 
-    bottom: 85px; 
+    bottom: 88px; 
     opacity: 0.75;
 }
 
