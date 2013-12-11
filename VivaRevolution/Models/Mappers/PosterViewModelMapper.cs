@@ -53,6 +53,7 @@ namespace VivaRevolution.Models.Mappers
             list.Add(new PosterImage { ImageValue = "db", ImageName = "David Brent" });
             list.Add(new PosterImage { ImageValue = "eh", ImageName = "Earl Hickey" });
             list.Add(new PosterImage { ImageValue = "hh", ImageName = "Hulk Hogan" });
+            list.Add(new PosterImage { ImageValue = "kl", ImageName = "Keith Lemon" });
             list.Add(new PosterImage { ImageValue = "jlp", ImageName = "Capt Kirk" });
             list.Add(new PosterImage { ImageName = " " });
 
