@@ -158,6 +158,8 @@
     <Content Include="Content\images\posterId\am.gif" />
     <Content Include="Content\images\posterId\ba.gif" />
     <Content Include="Content\images\posterId\bd.gif" />
+    <Content Include="Content\images\posterId\bg.gif" />
+    <Content Include="Content\images\posterId\bm.gif" />
     <Content Include="Content\images\posterId\ce.gif" />
     <Content Include="Content\images\posterId\cn.gif" />
     <Content Include="Content\images\posterId\db.gif" />
@@ -172,6 +174,7 @@
     <Content Include="Content\images\posterId\hsm.gif" />
     <Content Include="Content\images\posterId\jb.gif" />
     <Content Include="Content\images\posterId\ji.gif" />
+    <Content Include="Content\images\posterId\jl.gif" />
     <Content Include="Content\images\posterId\jlp.gif" />
     <Content Include="Content\images\posterId\kl.gif" />
     <Content Include="Content\images\posterId\lt.gif" />
@@ -182,10 +185,13 @@
     <Content Include="Content\images\posterId\sj.gif" />
     <Content Include="Content\images\posterId\st.gif" />
     <Content Include="Content\images\posterId\tb.gif" />
+    <Content Include="Content\images\posterId\tc.gif" />
     <Content Include="Content\images\posterId\yd.gif" />
     <Content Include="Content\images\poster\bg_tagline.gif" />
     <Content Include="Content\images\poster\bg_top.gif" />
+    <Content Include="Content\images\promo-poster.gif" />
     <Content Include="Content\images\promo-poster.jpg" />
+    <Content Include="Content\images\promo-poster.png" />
     <Content Include="Content\images\shared\bg_footer.gif" />
     <Content Include="Content\images\shared\bg_header-inner.jpg" />
     <Content Include="Content\images\shared\bg_lightbox.png" />
