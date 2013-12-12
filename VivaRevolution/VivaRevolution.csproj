@@ -189,7 +189,6 @@
     <Content Include="Content\images\posterId\yd.gif" />
     <Content Include="Content\images\poster\bg_tagline.gif" />
     <Content Include="Content\images\poster\bg_top.gif" />
-    <Content Include="Content\images\promo-poster.gif" />
     <Content Include="Content\images\promo-poster.jpg" />
     <Content Include="Content\images\promo-poster.png" />
     <Content Include="Content\images\shared\bg_footer.gif" />
