@@ -36,6 +36,7 @@
 
         <div class="grid_11">
             <h2>UPDATE AND POST</h2>
+
             <div id="PreviewFields">   
                 @Html.TextBoxFor(x => x.Name)
 
@@ -52,7 +53,8 @@
             <div id="PreviewButtons">
                 <input id="Post" type="submit" name="Post" class="button" value="Post" />
 
-                <input id="Update" type="button" name="Update" class="preview button" value="Update" />
+                @*<input id="Update" type="button" name="Update" class="preview button" value="Update" />*@
+                <a href="#pw-preview" id="Update" type="submit" class="ajaxPreview buttonLink scroll">Update</a>
 
                 <input id="Close" type="button" name="Close" class="button" value="Close" />
             </div>

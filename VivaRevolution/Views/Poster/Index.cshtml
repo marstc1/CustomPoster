@@ -45,14 +45,38 @@
 
 </section>
 
+
 <section class="latest mainBody" id="pw-latest">
     <h2>Latest</h2>
 
-    @if (@Model.FeaturePosters != null && @Model.FeaturePosters.Count() >= 3)
+    <div id="pw-LatestPosters">
+    @if (@Model.LatestPosters != null)
     {    
         Html.RenderPartial("_listOfPosters", Model.LatestPosters);
     }
+    </div>
 
+    <div id="pw-LatestPostersNav">
+        <a href="#more" class="ajaxShowAll buttonLink">See All (@Model.AllPosters.Count())</a>
+    </div>
+
+    <script>
+    //Show preview of poster in light box
+    $(".ajaxShowAll").click(function (event) {
+        event.preventDefault();
+
+        //Ajax post to _Preview action method
+        //Passes in the model values in the values variable
+        //This will return the _preview partial view in the data variable populated with model values
+        $.post("@Url.Action("_Latest", "Poster")", function (data) {
+            success: {
+                $("#pw-LatestPosters").html(data);
+            }
+        });
+
+        //return false;
+    });
+    </script>
 </section>
 
 

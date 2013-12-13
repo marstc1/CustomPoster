@@ -6,8 +6,8 @@
         <a href="/Poster/View?id=@p.PosterId&key=@p.PrivateKey">
             <div class="poster-container lightShadow border thumbnail">
                 <div class="poster-top">
-                    <div class="quote large">@p.Quote</div>
-                    <div class="name small">@p.Name @p.Title</div>
+                    <div class="quote large">@p.Quote.ToUpper()</div>
+                    <div class="name small">@p.Name.ToUpper() @p.Title.ToUpper()</div>
                     <div class="posterImg"><img src="~/Content/images/posterId/@p.ImagePath" /></div>
                 </div>
                 <div class="poster-tagline-container">

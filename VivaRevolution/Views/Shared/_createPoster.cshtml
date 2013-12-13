@@ -23,47 +23,8 @@
     </div>
                     
     <div>
-        @*<input id="Preview" type="submit" name="Preview" class="preview button" value="Preview" />*@
-        <a href="#pw-preview" id="Preview" type="submit" class="preview buttonLink scroll">Preview</a>
+        <a href="#pw-preview" id="Preview" type="submit" class="ajaxPreview buttonLink">Preview</a>
     </div>
-    
-    @*
-
-    <div id="Lightbox">
-        <div id="PreviewContent" class="content border shadow">
-            <div class="left">
-                <div id="PreviewPoster" class="promo-poster-container">
-                    <div id="DraftPoster"></div>
-                </div>
-            </div>
-
-            <div class="right">
-                <h1>Your Poster ...</h1>
-                
-                <div id="PreviewFields">
-                    
-                    @Html.TextBoxFor(x => x.Name)
-
-                    @Html.TextBoxFor(x => x.Title, new { @Placeholder = ".. add a title, if you want" })
-
-                    @Html.TextBoxFor(x => x.TagLine, new { @Placeholder = ".. add your own tag line too, if you want" })
-                </div>
-
-                <div>
-                    <p>Please post responsibly, please don't lose your job .. remember <strong>YOU are responsible</strong> for what YOU post!</p><br />
-                    <p>OK, got it! <input type="checkbox" name="chkAgree" /></p>
-                </div>
-
-                <div id="PreviewButtons">
-                    <input id="Post" type="submit" name="Post" class="button" value="Post" />
-
-                    <input id="Update" type="button" name="Update" class="preview button" value="Update" />
-
-                    <input id="Close" type="button" name="Close" class="button" value="Close" />
-                </div>
-            </div>
-        </div>
-    </div>*@
 
 
 <script>
@@ -78,7 +39,14 @@
     });
 
     //Show preview of poster in light box
-    $(".preview").click(function (event) {
+    $("#Update").click(function (event) {
+        event.preventDefault();
+
+        alert('hit Update');
+    });
+
+    //Show preview of poster in light box
+    $(".ajaxPreview").click(function (event) {
         event.preventDefault();
 
         //Values for model
@@ -98,6 +66,17 @@
             success: {
                 $("#DraftPoster").html(data);
                 $('#pw-preview').show();
+
+                var dest = 0;
+
+                if ($('#pw-preview').offset().top > $(document).height() - $(window).height()) {
+                    dest = $(document).height() - $(window).height();
+                } else {
+                    dest = $('#pw-preview').offset().top;
+                }
+
+                //go to destination
+                $('html,body').animate({ scrollTop: dest }, 1000, 'swing');
             }
         });
 

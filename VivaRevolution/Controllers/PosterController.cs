@@ -66,6 +66,8 @@ namespace VivaRevolution.Controllers
                 };
             }
 
+            ViewBag.URL = Request.Url.ToString();
+
             return View("View", vm);
         }
 
@@ -75,20 +77,14 @@ namespace VivaRevolution.Controllers
             return PartialView("_poster", poster);
         }
 
-        public ActionResult Latest()
-        {
-            PosterListViewModel vm = new PosterListViewModel(repository.Posters);
-
-            vm.Posters = vm.Posters.OrderByDescending(x => x.DateCreated);
-            
-            return View("List", vm);
-        }
-
-        public ActionResult TopRated()
+        [HttpPost]
+        public ActionResult _Latest()
         {
             IQueryable<Poster> vm = repository.Posters;
 
-            return View("List", vm);
+            vm = vm.OrderByDescending(x => x.DateCreated);
+
+            return PartialView("_listOfPosters", vm);
         }
 
         private static string GetLoginName()

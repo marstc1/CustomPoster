@@ -167,22 +167,35 @@ h1, h2 {
     min-height: 350px;
 }
 
-.footer {
-    min-height: 250px;
+.footer, #pw-preview {
     padding: 10px 55px;
-    margin: 5px auto 0px;
     background-color: #000;
     color: #999;
     font-size: 75%;
+}
+
+.footer {
+    min-height: 250px;
     background: #000 url(../images/shared/bg_footer.gif) 0 0 no-repeat;
+}
+
+#pw-preview {
+    min-height: 540px;
 }
 
     .footer h2 {
         color: gray;
         padding: 40px 0 5px;
+        margin-bottom: 10px;
     }
 
-    .footer .posterImg {
+    #pw-preview h2 {
+        color: gray;
+        padding: 40px 0 5px;
+        margin-bottom: 10px;
+    }
+
+    #pw-preview .posterImg {
     bottom: 92px; 
 }
 
@@ -422,3 +435,8 @@ textarea, input, select, .rounded {
         right: 0px;
         bottom: 0px;
     }
+
+#pw-LatestPostersNav {
+    width: 100%;
+    display: inline-block;
+}
