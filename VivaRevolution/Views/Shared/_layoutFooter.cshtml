@@ -75,9 +75,9 @@
                 <h2>3. POST</h2>
 
                 <div id="PostFields" class="formInputFields"> 
-                    <input type="text" placeholder="RACFID"/>
+                    @Html.TextBoxFor(x => x.CreatedBy, new { @Placeholder = "RACFID" })
 
-                    <input type="text" placeholder="Password"/>
+                    <input type="password" placeholder="Password"/>
                 </div>
 
                 <div>

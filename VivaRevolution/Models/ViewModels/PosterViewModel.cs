@@ -121,5 +121,7 @@ namespace VivaRevolution.Models.ViewModels
                 return string.Format("{0}{1}.gif", ImgCat, imgId);
             }
         }
+
+        public string CreatedBy { get; set; }
     }
 }
