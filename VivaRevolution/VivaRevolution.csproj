@@ -216,7 +216,7 @@
     <Content Include="Content\scripts\jquery-ui-1.8.20.js" />
     <Content Include="Content\scripts\jquery-ui-1.8.20.min.js" />
     <Content Include="Content\scripts\jquery.form-validation.js" />
-    <Content Include="Content\scripts\pw.jquery.PosterSlideShow.js" />
+    <Content Include="Content\scripts\pw.jquery.posterSlideShow.js" />
     <Content Include="Content\scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Content\scripts\jquery.unobtrusive-ajax.min.js" />
     <None Include="Content\scripts\jquery.validate-vsdoc.js" />
@@ -224,8 +224,11 @@
     <Content Include="Content\scripts\jquery.validate.min.js" />
     <Content Include="Content\scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Content\scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Content\scripts\pw.Jquery.pageScroll.js" />
+    <Content Include="Content\scripts\pw.jquery.pageScroll.js" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Shared\_layoutNavigation.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -238,13 +241,11 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Poster\List.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_createPoster.cshtml" />
     <Content Include="Views\Shared\_listOfPosters.cshtml" />
-    <Content Include="Views\Shared\_socialMedia.cshtml" />
-    <Content Include="Views\Shared\_footer.cshtml" />
-    <Content Include="Views\Shared\_navigation.cshtml" />
+    <Content Include="Views\Shared\_layoutSocialMedia.cshtml" />
+    <Content Include="Views\Shared\_layoutFooter.cshtml" />
     <Content Include="Views\Shared\_poster.cshtml" />
-    <Content Include="Views\Poster\_preview.cshtml" />
+    <Content Include="Content\scripts\pw.jquery.createPosterForm.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

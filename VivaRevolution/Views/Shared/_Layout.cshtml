@@ -14,22 +14,25 @@
     <div class="page-wrapper">
         <section class="intro" id="pw-intro">
 
-            @{ Html.RenderPartial("_navigation"); }
+            @{ Html.RenderPartial("_layoutNavigation"); }
 
             @RenderSection("intro", required: true)
 
         </section>
 
-        @{ Html.RenderPartial("_socialMedia"); }
+        @{ Html.RenderPartial("_layoutSocialMedia"); }
 
 
         @RenderBody()
 
 
-        @{ Html.RenderPartial("_footer", new VivaRevolution.Models.ViewModels.PosterViewModel()); }
+        @{ Html.RenderPartial("_layoutFooter", new VivaRevolution.Models.ViewModels.PosterViewModel()); }
 
-        @RenderSection("scripts", required: false)
-        <script type="text/javascript" src="~/Content/scripts/pw.Jquery.pageScroll.js"></script>
+        <section class="scripts" id="pw-scripts">
+            <script type="text/javascript" src="~/Content/scripts/pw.Jquery.pageScroll.js"></script>
+            <script type="text/javascript" src="~/Content/scripts/pw.jquery.createPosterForm.js"></script>
+            @RenderSection("scripts", required: false)
+        </section>
     </div>
 </body>
 </html>

@@ -71,10 +71,11 @@
         $.post("@Url.Action("_Latest", "Poster")", function (data) {
             success: {
                 $("#pw-LatestPosters").html(data);
+                $("#pw-LatestPostersNav").hide();
             }
         });
 
-        //return false;
+        return false;
     });
     </script>
 </section>

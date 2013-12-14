@@ -295,10 +295,12 @@ form textarea, input, select {
 form textarea {
     height: 5em;
     font-family: inherit;
+    overflow: auto;
 }
 
 form input {
     line-height: 2.5em;
+    height: 2.5em;
 }
 
 form select {
@@ -358,6 +360,7 @@ textarea, input, select, .rounded {
         display: inline-block;
         width: auto;
         line-height: 1em;
+        height: 1em;
         margin-left: 0.5em;
     }
 
@@ -426,11 +429,11 @@ textarea, input, select, .rounded {
         width: 50%;
     }
 
-    #PreviewContent #PreviewFields {
+    #PreviewContent .formInputFields {
         margin: 30px 5px;
     }
 
-    #PreviewContent #PreviewButtons {
+    #PreviewContent #PreviewButtons #UpdateButtons {
         position: absolute;
         right: 0px;
         bottom: 0px;
