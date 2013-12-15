@@ -7,7 +7,7 @@
 
         <div class="grid_10">
             <h2>WHAT'S THIS ALL ABOUT?</h2>
-            <p>So, this is just a bit of fun .. a doff of the cap to the original posters.</p>
+            <p>So, this is just a bit of fun .. a doff of the cap to the original posters.</p><br />
             <p>Here you can create the posters which could have been.</p>
             <p>Please have fun and enjoy the site in the manor which was intended.</p>
 
@@ -29,6 +29,10 @@
                             if (String.IsNullOrEmpty(@image.ImageValue))
                             {
                                 <option value="-" disabled>@image.ImageName</option>
+                            }
+                            else if (!String.IsNullOrEmpty(@Model.ImgId) && @Model.ImgId == @image.ImageValue)
+                            {
+                                <option value="@image.ImageValue" selected>@image.ImageName</option>
                             }
                             else
                             {
@@ -77,7 +81,7 @@
                 <div id="PostFields" class="formInputFields"> 
                     @Html.TextBoxFor(x => x.CreatedBy, new { @Placeholder = "RACFID" })
 
-                    <input type="password" placeholder="Password"/>
+                    @Html.PasswordFor(x => x.Password)
                 </div>
 
                 <div>

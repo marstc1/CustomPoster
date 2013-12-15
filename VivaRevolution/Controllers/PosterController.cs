@@ -28,24 +28,17 @@ namespace VivaRevolution.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(Poster poster, string preview, string post)
+        public ActionResult Index(Poster poster, string post, string password)
         {
-            if (preview != null)
+            if (post != null && password == "poster")
             {
-                return View("Preview", poster);
-            }
-
-            else if (post != null)
-            {
-                poster.CreatedBy = GetLoginName();
-
                 repository.SavePoster(poster);
 
                 return RedirectToAction("Index");
             }
             else
             {
-                return View("Index");
+                return View("Index", new IndexViewModel(this.repository));
             }
         }
 

@@ -24,11 +24,11 @@ body {
 
 a {
     text-decoration: none; 
-    color: #ffe700;
+    color: #fff;
 }
 
     a:hover {
-        color: #fff; 
+        color: #ffe700; 
     }
 
     a, img {

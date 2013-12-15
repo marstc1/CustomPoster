@@ -20,7 +20,9 @@ $(".ajaxPreview").click(function (event) {
 			"imgId": $("#ImgId").val(),
 			"name": $("#Name").val(),
 			"title": $("#Title").val(),
-			"tagLine": $("#TagLine").val()
+			"tagLine": $("#TagLine").val(),
+			"createdBy": $("#CreatedBy").val(),
+            "password": $("#Password").val()
 		}
 
 	//Ajax post to _Preview action method

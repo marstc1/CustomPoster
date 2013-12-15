@@ -1,9 +1,11 @@
-﻿using System;
+﻿using StructureMap;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using VivaRevolution.Models.Mappers;
+using VivaRevolution.Services.Abstract;
 
 namespace VivaRevolution.Models.ViewModels
 {
@@ -16,6 +18,7 @@ namespace VivaRevolution.Models.ViewModels
         private string title;
         private string tagLine;
         private PosterViewModelMapper mapper;
+        private IChallengeResponseService challengeResponseService;
 
         public PosterViewModel()
         {
@@ -74,7 +77,7 @@ namespace VivaRevolution.Models.ViewModels
         {
             get
             {
-                return this.title;
+                return (String.IsNullOrEmpty(this.title)) ? String.Empty : String.Format(" - {0}", this.title);
             }
             set
             {
@@ -122,6 +125,15 @@ namespace VivaRevolution.Models.ViewModels
             }
         }
 
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get { return GetLoginName(); } }
+
+        public string Password { get; set; }
+
+        private static string GetLoginName()
+        {
+            IChallengeResponseService userservice = ObjectFactory.GetInstance<IChallengeResponseService>();
+            string userid = userservice.Invoke();
+            return userid;
+        }
     }
 }

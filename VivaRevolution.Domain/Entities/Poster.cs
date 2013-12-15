@@ -52,8 +52,7 @@ namespace VivaRevolution.Domain.Entities
         {
             get
             {
-                var t = (String.IsNullOrEmpty(this.title)) ? String.Empty : String.Format(" - {0}", this.title);
-                return t;
+                return (String.IsNullOrEmpty(this.title)) ? String.Empty : String.Format(" - {0}", this.title);
             }
             set
             {
